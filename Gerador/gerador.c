@@ -10,7 +10,7 @@ double uni_generator(unsigned int seed){
 
     srand(seed);
     valor = (rand()%100); 
-		valor = valor/100;
+    valor = valor/100;
     printf("valor uniforme = %lf\n", valor);
     return valor;
 
