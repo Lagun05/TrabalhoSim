@@ -26,7 +26,7 @@ typedef struct fila_s {
 //funções da fila
 void init();
 void add(fregues_t, fila_t*);
-void remove(fregues_t, fila_t*);
+fila_t remove(fregues_t, fila_t*);
 
 //variaves essenciais
 extern fila_t *fila1_head; //nó cabeça da fila 1
