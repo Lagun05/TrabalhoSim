@@ -1,6 +1,6 @@
+//ARQUIVO SÓ PRA TESTE, NÃO É FINAL
 #include <stdio.h>
 #include <stdlib.h>
-#include <math.h>
 
 #include "src/fila/fila.h"
 #include "src/gerador/gerador.h"
