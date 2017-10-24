@@ -18,23 +18,15 @@ typedef struct fregues_s {
 typedef struct fila_s {
     
     fregues_t fregues;
-    fila_s *prox;
+    struct fila_s *prox;
 
 } fila_t;
 
 
 //funções da fila
-void init();
+fila_t* init();
 void add(fregues_t, fila_t*);
-fila_t remove(fila_t*);
-
-//variaves essenciais
-extern fila_t *fila1_head; //nó cabeça da fila 1
-extern fila_t *fila2_head; //nó cabeça da fila 2
+fregues_t remover(fila_t*);
+void print(fila_t*);
 
 #endif
-
-#include <stdio.h>
-#include <stdlib.h>
-
-#include "fila.h"
