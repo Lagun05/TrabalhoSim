@@ -2,8 +2,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "fila/fila.h"
-#include "gerador/gerador.h"
+#include "src/fila/fila.h"
+#include "src/gerador/gerador.h"
 //kk
 void menu(fila_t *fila);
 void mudar_seed();
