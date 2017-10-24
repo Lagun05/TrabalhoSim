@@ -3,7 +3,7 @@
 
 #include "fila.h"
 
-//inicializa as filas e variaveis
+//inicializa as filas e variaveis 
 fila_t* init() {
 
 	fila_t *fila_head;
@@ -35,7 +35,8 @@ void add(fregues_t fregues, fila_t *fila) {
   novo_fregues->fregues = fregues;
   novo_fregues->prox = NULL;
     
-  //checa se a fila esta vazia, caso esteja, o novo elemento será o primeiro, caso haja elementos na fila, percorremos a fila até encontrar o último elemento
+  /* checa se a fila esta vazia, caso esteja, o novo elemento será o primeiro 
+	caso haja elementos na fila, percorremos a fila até encontrar o último elemento */
   if(fila->prox == NULL) {
   	fila->prox = novo_fregues;
   }
@@ -84,10 +85,6 @@ void print(fila_t *fila) {
 		fila = fila->prox;
 		printf("ID = %d\n", fila->fregues.id_fregues);
 		printf("Fila = %d\n", fila->fregues.fila);
-		//printf("Tempo de espera na fila 1: %lf\n", fila->fregues.tempo_espera_1);
-		//printf("Tempo de espera na fila 2: %lf\n", fila->fregues.tempo_espera_2);
-		//printf("Tempo do primeiro servico: %lf\n", fila->fregues.tempo_serv_1);
-		//printf("Tempo do segundo servico:  %lf\n", fila->fregues.tempo_serv_2);
 		printf("-------------------------------------------------\n");
 	}
 

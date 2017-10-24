@@ -4,7 +4,7 @@
 //estrutura do fregues
 typedef struct fregues_s {
 
-    int id_fregues;
+    int id_fregues; //-1 = não existe
     int fila; //1 para fila 1, 2 para fila 2, 0 em nenhuma fila
     int xr; //etapa do servico que ele estava quando foi interrompido, 0 se não está interrompido
     double tempo_espera_1; //tempo que esperou na fila 1
