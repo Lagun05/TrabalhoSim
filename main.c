@@ -4,7 +4,7 @@
 
 #include "src/fila/fila.h"
 #include "src/gerador/gerador.h"
-//kk
+
 void menu(fila_t *fila);
 void mudar_seed();
 int add_f(fila_t*, int);
