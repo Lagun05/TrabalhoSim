@@ -27,7 +27,7 @@ gerador.o: src/gerador/gerador.c
 fila.o: src/fila/fila.c
 	@$(CC) $(CFLAGS) -o $@ $< 
 
-main.o: src/main.c src/fila/fila.h src/gerador/gerador.h
+main.o: main.c src/fila/fila.h src/gerador/gerador.h
 	@$(CC) $(CFLAGS) -o $@ $<
 
 ##Apagar
