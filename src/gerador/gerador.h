@@ -1,7 +1,12 @@
 #ifndef GERADOR_H
 #define GERADOR_H
 
-double uni_generator(unsigned int);
-double exp_generator(unsigned int, int);
+extern double seed;
+extern int lambda;
+
+void init_seed();
+double uni_generator();
+double exp_generator();
+int gera_fregues(double, int);
 
 #endif

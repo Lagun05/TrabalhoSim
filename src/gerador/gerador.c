@@ -1,14 +1,21 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
 #include <math.h>
 
 #include "gerador.h"
 
-double uni_generator(unsigned int seed){
+double seed;
+int lambda;
+
+void init_seed() {
+	srand(seed);
+}
+
+double uni_generator(){
 
     double valor;
 
-    srand(seed);
     valor = (rand()%100); 
     valor = valor/100;
     
@@ -16,13 +23,24 @@ double uni_generator(unsigned int seed){
 
 }
 
-double exp_generator(unsigned int seed, int lambda) {
+double exp_generator() {
 
-    double valor;
+    double time;
     
-    valor = uni_generator(seed);
-    valor = log(valor)/(-lambda);
+    time = uni_generator(seed);
+    time = log(time)/(-lambda);
 
-    return valor;
+    return time;
+
+}
+
+int gera_fregues(double time, int id) {
+
+    sleep(time);
+    
+    printf("Fregues chegou em %lf segundos\n", time);
+    printf("ID do fregues: %d\n", id++);
+
+    return id;        
 
 }
