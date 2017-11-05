@@ -3,6 +3,9 @@
 
 #include "fila.h"
 
+fila_t *fila_1;
+fila_t *fila_2;
+
 //inicializa as filas e variaveis 
 fila_t* init() {
 
@@ -50,6 +53,24 @@ void add(fregues_t fregues, fila_t *fila) {
     fila->prox = novo_fregues;
 	}
 
+}
+
+//adiciona um elemento sempre ao primeiro lugar na fila(usado para fila 2)
+void add_primeiro(fregues_t fregues, fila_t *fila) {
+
+	//aloca memoria para o novo elemento
+  fila_t *novo_fregues;
+  if(!(novo_fregues = malloc(sizeof(fila_t)))) {
+ 		printf("Nao ha memoria o suficiente\n");
+    exit(-1);
+  }
+
+	//inicializa o novo elemento
+	novo_fregues->fregues = fregues;
+	novo_fregues->prox = fila->prox;
+
+	fila->prox = novo_fregues;
+	
 }
 
 fregues_t remover(fila_t *fila) {

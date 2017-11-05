@@ -22,9 +22,14 @@ typedef struct fila_s {
 
 } fila_t;
 
+//variaveis das filas
+extern fila_t *fila_1;
+extern fila_t *fila_2;
+
 //funções da fila
 fila_t* init();
 void add(fregues_t, fila_t*);
+void add_primeiro(fregues_t, fila_t*);
 fregues_t remover(fila_t*);
 void print(fila_t*);
 

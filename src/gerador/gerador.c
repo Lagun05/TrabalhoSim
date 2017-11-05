@@ -34,13 +34,11 @@ double exp_generator() {
 
 }
 
-int gera_fregues(double time, int id) {
+void gera_fregues(double time, int id) {
 
     sleep(time);
     
     printf("Fregues chegou em %lf segundos\n", time);
-    printf("ID do fregues: %d\n", id++);
-
-    return id;        
-
+    printf("ID do fregues: %d\n", id);
+        
 }

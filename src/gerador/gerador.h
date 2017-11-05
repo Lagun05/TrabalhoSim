@@ -7,6 +7,6 @@ extern int lambda;
 void init_seed();
 double uni_generator();
 double exp_generator();
-int gera_fregues(double, int);
+void gera_fregues(double, int);
 
 #endif

@@ -1,29 +1,40 @@
 /* ARQUIVO SÓ PRA TESTE, NÃO É FINAL */
 #include <stdio.h>
 #include <stdlib.h>
+#include <pthread.h>
 
 #include "src/fila/fila.h"
 #include "src/gerador/gerador.h"
+#include "src/thread/thread.h"
 
-void menu(fila_t *fila);
+void menu();
 void mudar_lambda();
 void mudar_seed();
-int add_f(fila_t*, int);
-void rm_f(fila_t*);
+int add_f(int);
+void rm_f();
+void sim();
 
 int main() {
 
-	fila_t *fila = malloc(sizeof(fila_t));
-	init();
+	fila_1 = malloc(sizeof(fila_t));
+	fila_2 = malloc(sizeof(fila_t));
+
+	fila_1 = init();
+	fila_2 = init();
+
+	seed = 100;
 	lambda = 1;
 
-	menu(fila);
+	menu();
+
+	free(fila_1);
+	free(fila_2);
 
 	return 0;	
 
 }
 
-void menu(fila_t *fila) {
+void menu() {
 
 	char escolha;
 	int continua = 1;
@@ -39,7 +50,8 @@ void menu(fila_t *fila) {
 		printf("3 - Adicionar fregues\n");
 		printf("4 - Remover fregues\n");
 		printf("5 - Mostrar Fila\n");
-		printf("6 - Sair\n");
+		printf("6 - Iniciar simulacao\n");
+		printf("7 - Sair\n");
 		printf("----------------------------\n");
 
 		scanf(" %c", &escolha);
@@ -52,15 +64,18 @@ void menu(fila_t *fila) {
 				mudar_seed();
 				break;
 			case '3':
-				id = add_f(fila, id);
+				id = add_f(id);
 				break;
 			case '4':
-				rm_f(fila);
+				rm_f();
 				break;
 			case '5':
-				print(fila);
+				print(fila_1);
 				break;
 			case '6':
+				sim(id);
+				break;
+			case '7':
 				continua = 0;
 				break;
 			default:
@@ -88,20 +103,24 @@ void mudar_seed() {
 
 }
 
-int add_f(fila_t *fila, int id) {
+int add_f(int id) {
 
 	fregues_t fregues;
 	fregues.id_fregues = id++;
 	fregues.fila = 1;
-	add(fregues, fila);
+	add(fregues, fila_1);
 
 	return id;
 }
 
-void rm_f(fila_t *fila) {
+void rm_f() {
 
-	remover(fila);
+	remover(fila_1);
 	
-
 }
 
+void sim() {
+
+	cria_threads();
+
+}
